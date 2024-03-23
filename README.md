@@ -1,472 +1,71 @@
+# Python Basics README.md
 
+This README provides an overview and explanation of the Python code snippets included.
 
-# Introduction to Python
+## Introduction to Python
 
-echo "Hello world"
+The code starts with a simple "Hello world" print statement followed by iterating through a list of cars.
 
-carlist=("Honda" "Toyota" "Mahindra")
-for car in "${carlist[@]}"; do
-    echo "$car"
-done
+## Variable
 
-# Variables
-name='Swarnendu '
-age=27
-echo "$name"Who age is "$age"
-echo "${name}who age is ${age}"
+Demonstrates variable declaration (`name` and `age`) and string formatting techniques.
 
-# Arithmetic Operator
-# + - * / % ** //
-a=$((2 + 8))
-b=$((8 - 3))
-c=$((2 * 8))
-d=$((8 / 2))
-e=$((8 % 3))
-f=$((2 * (2 + 8)))
-echo "$a"
-echo "$b"
-echo "$c"
-echo "$d"
-echo "$e"
-echo "$f"
+## Arithmetic Operator
 
-# Calculator
-read -p "Enter first number : " a
-read -p "Enter second number : " b
-echo "Addition : $((a + b))"
-echo "Subtract : $((a - b))"
-echo "Multiply : $((a * b))"
-echo "Division : $((a / b))"
-echo "Remainder : $((a % b))"
-echo "Exponent : $((a ** b))"
-echo "Floor Division : $((a / b))"
+Performs basic arithmetic operations (`+`, `-`, `*`, `/`, `%`, `**`, `//`) and prints the results.
 
-# Comparison Operator
-# == != > < >= <=
-a=2
-b=3
-c=2
-d=3
-echo "$((a == b))"
-echo "$((a != b))"
-echo "$((a > b))"
-echo "$((a < b))"
-echo "$((a >= b))"
-echo "$((a <= b))"
-echo "$((a == c))"
-echo "$((a != c))"
-echo "$((a > c))"
-echo "$((a < c))"
-echo "$((a >= c))"
-echo "$((a <= c))"
-echo "$((b == d))"
-echo "$((b != d))"
-echo "$((b > d))"
-echo "$((b < d))"
-echo "$((b >= d))"
-echo "$((b <= d))"
+## Calculator
 
-# Logical Operator
-# and or not
-a=2
-b=3
-c=2
-d=3
-echo "$((a == b && a == c))"
-echo "$((a == b || a == c))"
-echo "$((! (a == b)))"
-echo "$((! (a == c)))"
+Takes user input for two numbers and performs arithmetic operations on them, printing the results.
 
-# Assignment Operator
-# = += -= *= /= %= **= //=
-a=2
-b=3
-a=$((a + b))
-echo "$a"
-a=$((a - b))
-echo "$a"
-a=$((a * b))
-echo "$a"
-a=$((a / b))
-echo "$a"
-a=$((a % b))
-echo "$a"
-a=$((a ** b))
-echo "$a"
-a=$((a / b))
-echo "$a"
+## Comparison Operator
 
-# Operators
-# Weather condition
-weather_condition="rainy"
-if [ "$weather_condition" = "rainy" ]; then
-    echo "Take umbrella"
-elif [ "$weather_condition" = "sunny" ]; then
-    echo "Take sunglasses"
-else
-    echo "Take nothing"
-fi
+Demonstrates various comparison operators (`==`, `!=`, `>`, `<`, `>=`, `<=`) and prints the results.
 
-# Functions
-# Greetings Function
-greetings() {
-    local name="$1"
-    echo "Hello $name How are you?"
-}
+## Logical Operator
 
-greetings 'Swarnendu'
+Demonstrates logical operators (`and`, `or`, `not`) and prints the results.
 
-# Calculate area of a rectangle function
-area_of_rectangle() {
-    local length="$1"
-    local width="$2"
-    local area=$((length * width))
-    echo "Area of rectangle is $area"
-}
+## Assignment Operator
 
-area_of_rectangle 10 20
+Performs assignments with augmented assignment operators (`+=`, `-=`, `*=`, `/=`, `%=`, `**=`, `//=`) and prints the results.
 
-# Withdraw money function
-withdraw_money() {
-    local balance="$1"
-    local amount="$2"
-    if [ "$amount" -gt "$balance" ]; then
-        echo "Insufficient balance"
-    else
-        balance=$((balance - amount))
-        echo "Remaining balance is $balance"
-    fi
-}
+## Operators
 
-withdraw_money 1000 500
+Demonstrates usage of operators based on weather conditions.
 
-# Loops
-# For loop
-for ((i = 1; i <= 10; i++)); do
-    echo "this is a loop$i"
-done
+## Functions
 
-# While loop
-i=1
-while [ "$i" -le 10 ]; do
-    echo "this is a loop$i"
-    ((i++))
-done
+Defines and calls two functions: `greetings` and `area_of_rectangle`.
 
-# Decrement while loop
-i=10
-while [ "$i" -ge 1 ]; do
-    echo "this is a loop$i"
-    ((i--))
-done
+## Withdraw Money Function
 
-# Modules
-# Importing modules
-echo "sqrt(16)" | bc -l
-echo "Hello"
-sleep 2
-echo "World"
-echo "$((RANDOM % 10 + 1))"
+Simulates a simple banking operation with a `withdraw_money` function.
 
-# Calculate area of a rectangle function
-area_of_rectangle() {
-    local length="$1"
-    local width="$2"
-    local area=$((length * width))
-    echo "Area of rectangle is $area"
-}
+## Loops
 
-# Calculate area of a circle function
-area_of_circle() {
-    local radius="$1"
-    local area=$(echo "scale=2; 3.14 * $radius * $radius" | bc -l)
-    echo "Area of circle is $area"
-}
+Demonstrates `for` loop and `while` loop with examples, including a decrementing while loop.
 
-source area_of_shapes.sh
+## Modules
 
-area_of_rectangle 10 20
-area_of_circle 10
+Imports and demonstrates usage of `math`, `time`, and `random` modules.
 
-# List
-carlist=("Honda" "Toyota" "Mahindra")
-echo "${carlist[@]}"
-echo "${carlist[0]}"
-echo "${carlist[1]}"
-echo "${carlist[2]}"
-echo "${carlist[@]:0:2}"
-echo "${carlist[@]:0:3}"
-echo "${carlist[@]:0}"
-echo "${carlist[@]:0:2}"
-echo "${carlist[@]}"
-carlist+=("Tata")
-echo "${carlist[@]}"
-carlist[1]="Suzuki"
-echo "${carlist[@]}"
-unset 'carlist[0]'
-echo "${carlist[@]}"
-carlist[0]="Hyundai"
-echo "${carlist[@]}"
-for car in "${carlist[@]}"; do
-    echo "$car"
-done
+## Area of Shapes Module
 
-# Dictionary
-declare -A car_dict=(
-    ["Brand"]="Honda"
-    ["Model"]="Civic"
-    ["Year"]="2022"
-)
+Imports a custom module `area_of_shapes` and calls functions from it.
 
-echo "${car_dict["Brand"]}"
-echo "${car_dict["Model"]}"
-echo "${car_dict["Year"]}"
+## List
 
-Brand="${car_dict["Brand"]}"
-echo "$Brand"
+Demonstrates creation and manipulation of lists, including slicing.
 
-keys="${!car_dict[@]}"
-echo "$keys"
+## List Loops
 
-car_dict["Brand"]="Toyota"
-echo "${car_dict["Brand"]}"
+Iterates through a list using a loop and prints each element.
 
-car_dict["Year"]="2023"
-echo "$keys"
-echo "${car_dict["Year"]}"
-#!/bin/bash
+## Dictionary
 
-# Introduction to Python
+Demonstrates creation and manipulation of dictionaries.
 
-echo "Hello world"
+---
 
-carlist=("Honda" "Toyota" "Mahindra")
-for car in "${carlist[@]}"; do
-    echo "$car"
-done
-
-# Variables
-name='Swarnendu '
-age=27
-echo "$name"Who age is "$age"
-echo "${name}who age is ${age}"
-
-# Arithmetic Operator
-# + - * / % ** //
-a=$((2 + 8))
-b=$((8 - 3))
-c=$((2 * 8))
-d=$((8 / 2))
-e=$((8 % 3))
-f=$((2 * (2 + 8)))
-echo "$a"
-echo "$b"
-echo "$c"
-echo "$d"
-echo "$e"
-echo "$f"
-
-# Calculator
-read -p "Enter first number : " a
-read -p "Enter second number : " b
-echo "Addition : $((a + b))"
-echo "Subtract : $((a - b))"
-echo "Multiply : $((a * b))"
-echo "Division : $((a / b))"
-echo "Remainder : $((a % b))"
-echo "Exponent : $((a ** b))"
-echo "Floor Division : $((a / b))"
-
-# Comparison Operator
-# == != > < >= <=
-a=2
-b=3
-c=2
-d=3
-echo "$((a == b))"
-echo "$((a != b))"
-echo "$((a > b))"
-echo "$((a < b))"
-echo "$((a >= b))"
-echo "$((a <= b))"
-echo "$((a == c))"
-echo "$((a != c))"
-echo "$((a > c))"
-echo "$((a < c))"
-echo "$((a >= c))"
-echo "$((a <= c))"
-echo "$((b == d))"
-echo "$((b != d))"
-echo "$((b > d))"
-echo "$((b < d))"
-echo "$((b >= d))"
-echo "$((b <= d))"
-
-# Logical Operator
-# and or not
-a=2
-b=3
-c=2
-d=3
-echo "$((a == b && a == c))"
-echo "$((a == b || a == c))"
-echo "$((! (a == b)))"
-echo "$((! (a == c)))"
-
-# Assignment Operator
-# = += -= *= /= %= **= //=
-a=2
-b=3
-a=$((a + b))
-echo "$a"
-a=$((a - b))
-echo "$a"
-a=$((a * b))
-echo "$a"
-a=$((a / b))
-echo "$a"
-a=$((a % b))
-echo "$a"
-a=$((a ** b))
-echo "$a"
-a=$((a / b))
-echo "$a"
-
-# Operators
-# Weather condition
-weather_condition="rainy"
-if [ "$weather_condition" = "rainy" ]; then
-    echo "Take umbrella"
-elif [ "$weather_condition" = "sunny" ]; then
-    echo "Take sunglasses"
-else
-    echo "Take nothing"
-fi
-
-# Functions
-# Greetings Function
-greetings() {
-    local name="$1"
-    echo "Hello $name How are you?"
-}
-
-greetings 'Swarnendu'
-
-# Calculate area of a rectangle function
-area_of_rectangle() {
-    local length="$1"
-    local width="$2"
-    local area=$((length * width))
-    echo "Area of rectangle is $area"
-}
-
-area_of_rectangle 10 20
-
-# Withdraw money function
-withdraw_money() {
-    local balance="$1"
-    local amount="$2"
-    if [ "$amount" -gt "$balance" ]; then
-        echo "Insufficient balance"
-    else
-        balance=$((balance - amount))
-        echo "Remaining balance is $balance"
-    fi
-}
-
-withdraw_money 1000 500
-
-# Loops
-# For loop
-for ((i = 1; i <= 10; i++)); do
-    echo "this is a loop$i"
-done
-
-# While loop
-i=1
-while [ "$i" -le 10 ]; do
-    echo "this is a loop$i"
-    ((i++))
-done
-
-# Decrement while loop
-i=10
-while [ "$i" -ge 1 ]; do
-    echo "this is a loop$i"
-    ((i--))
-done
-
-# Modules
-# Importing modules
-echo "sqrt(16)" | bc -l
-echo "Hello"
-sleep 2
-echo "World"
-echo "$((RANDOM % 10 + 1))"
-
-# Calculate area of a rectangle function
-area_of_rectangle() {
-    local length="$1"
-    local width="$2"
-    local area=$((length * width))
-    echo "Area of rectangle is $area"
-}
-
-# Calculate area of a circle function
-area_of_circle() {
-    local radius="$1"
-    local area=$(echo "scale=2; 3.14 * $radius * $radius" | bc -l)
-    echo "Area of circle is $area"
-}
-
-source area_of_shapes.sh
-
-area_of_rectangle 10 20
-area_of_circle 10
-
-# List
-carlist=("Honda" "Toyota" "Mahindra")
-echo "${carlist[@]}"
-echo "${carlist[0]}"
-echo "${carlist[1]}"
-echo "${carlist[2]}"
-echo "${carlist[@]:0:2}"
-echo "${carlist[@]:0:3}"
-echo "${carlist[@]:0}"
-echo "${carlist[@]:0:2}"
-echo "${carlist[@]}"
-carlist+=("Tata")
-echo "${carlist[@]}"
-carlist[1]="Suzuki"
-echo "${carlist[@]}"
-unset 'carlist[0]'
-echo "${carlist[@]}"
-carlist[0]="Hyundai"
-echo "${carlist[@]}"
-for car in "${carlist[@]}"; do
-    echo "$car"
-done
-
-# Dictionary
-declare -A car_dict=(
-    ["Brand"]="Honda"
-    ["Model"]="Civic"
-    ["Year"]="2022"
-)
-
-echo "${car_dict["Brand"]}"
-echo "${car_dict["Model"]}"
-echo "${car_dict["Year"]}"
-
-Brand="${car_dict["Brand"]}"
-echo "$Brand"
-
-keys="${!car_dict[@]}"
-echo "$keys"
-
-car_dict["Brand"]="Toyota"
-echo "${car_dict["Brand"]}"
-
-car_dict["Year"]="2023"
-echo "$keys"
-echo "${car_dict["Year"]}"
+This code provides a comprehensive overview of basic Python concepts including variables, operators, functions, loops, modules, lists, and dictionaries. It serves as a good starting point for beginners learning Python.
